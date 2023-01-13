@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe_class", "TicTacToe_class\TicTacToe_class.vcxproj", "{01785574-4FCB-41B4-94D0-DADD02222524}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Debug|x64.ActiveCfg = Debug|x64
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Debug|x64.Build.0 = Debug|x64
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Debug|x86.ActiveCfg = Debug|Win32
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Debug|x86.Build.0 = Debug|Win32
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Release|x64.ActiveCfg = Release|x64
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Release|x64.Build.0 = Release|x64
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Release|x86.ActiveCfg = Release|Win32
+		{01785574-4FCB-41B4-94D0-DADD02222524}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A6506B1-C571-4E6D-A5B7-4B3E658B4A8F}
+	EndGlobalSection
+EndGlobal
