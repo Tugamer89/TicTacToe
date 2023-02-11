@@ -4,6 +4,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include <map>
 
 using namespace std;
 
@@ -77,6 +78,7 @@ public:
 
 private:
 	vector<vector<string>> gameBoard;
+	map<string, int> memo;
 	States gameResult;
 
 	void printBoard() const {
@@ -132,6 +134,14 @@ private:
 	string intPos2String(int i, int j) {
 		return to_string(i + 1) + to_string(j + 1);
 	}
+	string getBoardSignature() {
+		string sign;
+		for (int i = 0; i < BOARD_DIMENSION; i++)
+			for (int j = 0; j < BOARD_DIMENSION; j++)
+				sign += gameBoard[i][j];
+
+		return sign;
+	}
 	string getRandomAIPosition() {
 		random_device rd;
 		mt19937 mt(rd());
@@ -165,11 +175,16 @@ private:
 		return bestMove;
 	}
 	int minimax(int depth, bool isMax) {
+		string key = getBoardSignature();
+		if (memo.count(key))
+			return memo[key];
+
 		if (isGameOver())
 			return (gameResult == WON ? -10 + depth : (gameResult == LOST ? 10 - depth : 0));
 
+		int best;
 		if (isMax) {
-			int best = INT_MIN;
+			best = INT_MIN;
 			for (int i = 0; i < BOARD_DIMENSION; i++) {
 				for (int j = 0; j < BOARD_DIMENSION; j++) {
 					if (gameBoard[i][j] == " ") {
@@ -179,10 +194,9 @@ private:
 					}
 				}
 			}
-			return best;
 		}
 		else {
-			int best = INT_MAX;
+			best = INT_MAX;
 			for (int i = 0; i < BOARD_DIMENSION; i++) {
 				for (int j = 0; j < BOARD_DIMENSION; j++) {
 					if (gameBoard[i][j] == " ") {
@@ -192,8 +206,10 @@ private:
 					}
 				}
 			}
-			return best;
 		}
+
+		memo[key] = best;
+		return best;
 	}
 };
 
